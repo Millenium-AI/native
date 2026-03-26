@@ -112,8 +112,8 @@ function App() {
             </div>
 
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="bg-native-green h-32 flex items-center justify-center">
-                <Shield className="w-24 h-24 text-white" />
+              <div className="bg-white h-32 flex items-center justify-center p-4">
+                <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-24 w-auto" />
               </div>
               <div className="p-8 space-y-6">
                 <div className="flex items-start gap-4">
