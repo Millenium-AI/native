@@ -43,9 +43,8 @@ function App() {
 
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <Shield className="w-8 h-8 text-native-green" />
-              <span className="text-lg font-semibold text-native-gray hidden sm:inline">Native Insurance Group</span>
+            <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-16 w-auto" />
             </div>
 
             <div className="hidden md:flex space-x-1">
@@ -479,10 +478,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Shield className="w-6 h-6 text-native-green" />
-                <span className="font-semibold text-white">Native Insurance</span>
-              </div>
+              <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-12 w-auto mb-4" />
               <p className="text-gray-300 text-sm">Protecting Florida families and businesses since 2004.</p>
             </div>
             <div>
