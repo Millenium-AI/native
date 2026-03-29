@@ -9,9 +9,12 @@ export const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-5xl lg:text-6xl font-light text-native-green mb-6 leading-tight">
-              Protecting What Matters Most from The Keys to The Panhandle
+            <h1 className="text-5xl lg:text-6xl font-bold text-native-green mb-3 leading-tight">
+              Protecting What Matters Most
             </h1>
+            <p className="text-xl text-native-green/70 font-medium mb-6">
+              Serving Florida from The Keys to The Panhandle
+            </p>
             <p className="text-xl text-native-gray mb-8 leading-relaxed">
               Native Insurance Group helps Florida families and businesses find the right coverage. We're independent, local, and committed to your peace of mind.
             </p>
@@ -24,7 +27,7 @@ export const Hero = () => {
                 Start a Quote <ArrowRight className="w-5 h-5" />
               </button>
               <a
-                href="tel:+1234567890"
+                href="tel:+19045349878"
                 className="px-8 py-4 text-native-green border-2 border-native-green rounded-lg font-semibold hover:bg-native-mint-light transition-all flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" /> Call Now
