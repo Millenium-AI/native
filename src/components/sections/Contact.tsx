@@ -2,18 +2,16 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Phone, Mail, Clock, CheckCircle } from 'lucide-react';
 import type { FormData } from '../../types';
-
 // ---------------------------------------------------------------------------
-// EmailJS config  –  fill these in once you have your EmailJS account
+// EmailJS config – fill these in once you have your EmailJS account
 // Store them in a .env file at the project root (never commit real keys):
 //   VITE_EMAILJS_SERVICE_ID=your_service_id
 //   VITE_EMAILJS_TEMPLATE_ID=your_template_id
 //   VITE_EMAILJS_PUBLIC_KEY=your_public_key
 // ---------------------------------------------------------------------------
-const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  ?? 'YOUR_SERVICE_ID';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID ?? 'YOUR_SERVICE_ID';
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  ?? 'YOUR_PUBLIC_KEY';
-
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? 'YOUR_PUBLIC_KEY';
 export const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -23,30 +21,26 @@ export const Contact = () => {
     insuranceType: '',
     message: ''
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
-
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          from_name:      formData.name,
-          from_email:     formData.email,
-          phone:          formData.phone,
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
           contact_method: formData.contactMethod,
           insurance_type: formData.insuranceType,
-          message:        formData.message,
+          message: formData.message,
         },
         EMAILJS_PUBLIC_KEY
       );
-
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', contactMethod: 'email', insuranceType: '', message: '' });
     } catch (error) {
@@ -56,14 +50,12 @@ export const Contact = () => {
       setIsSubmitting(false);
     }
   };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
   return (
     <section id="contact" className="py-20 bg-native-mint-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,14 +141,13 @@ export const Contact = () => {
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-native-green focus:ring-2 focus:ring-native-green-secondary outline-none transition-colors"
                 >
                   <option value="">Select coverage type</option>
-                  <option value="auto">Auto Insurance</option>
-                  <option value="home">Home Insurance</option>
-                  <option value="flood">Flood Insurance</option>
-                  <option value="condo">Condo Insurance</option>
-                  <option value="renters">Renters Insurance</option>
-                  <option value="life">Life Insurance</option>
-                  <option value="business">Business Insurance</option>
-                  <option value="other">Other Coverage</option>
+                  <option value="Auto Insurance">Auto Insurance</option>
+                  <option value="Home, Condo & Renters">Home, Condo &amp; Renters</option>
+                  <option value="Flood Insurance">Flood Insurance</option>
+                  <option value="Business & Commercial">Business &amp; Commercial</option>
+                  <option value="Recreational Vehicles">Recreational Vehicles</option>
+                  <option value="Boats & Yachts">Boats &amp; Yachts</option>
+                  <option value="Personal Articles">Personal Articles</option>
                 </select>
               </div>
               <div>
@@ -173,7 +164,6 @@ export const Contact = () => {
                   placeholder="Example: Looking to renew home insurance, recently had roof damage..."
                 />
               </div>
-
               {/* Success message */}
               {submitStatus === 'success' && (
                 <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
@@ -181,14 +171,12 @@ export const Contact = () => {
                   <p className="text-sm font-medium">Thank you! We'll be in touch within one business day.</p>
                 </div>
               )}
-
               {/* Error message */}
               {submitStatus === 'error' && (
                 <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
                   <p className="text-sm font-medium">Something went wrong. Please call us directly at (904) 534-9878.</p>
                 </div>
               )}
-
               <button
                 type="submit"
                 disabled={isSubmitting}
