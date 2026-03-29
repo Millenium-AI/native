@@ -46,7 +46,7 @@ export const Services = () => {
           Coverage Built for Florida. Chosen Just for You.
         </h2>
         <p className="text-base text-native-gray mb-10 text-center max-w-lg mx-auto">
-          As independent agents, we shop multiple carriers to protect every part of your Florida life
+          As independent agents, we shop multiple carriers to protect every part of your Florida life.
         </p>
 
         {/* Row 1 — 4 cards: 1 col mobile, 2 col tablet, 4 col desktop */}
