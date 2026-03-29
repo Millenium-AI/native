@@ -10,7 +10,7 @@ export const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-5xl lg:text-6xl font-light text-native-green mb-6 leading-tight">
-              Protect What Matters Most
+              Protecting What Matters Most from The Keys to The Panhandle
             </h1>
             <p className="text-xl text-native-gray mb-8 leading-relaxed">
               Native Insurance Group helps Florida families and businesses find the right coverage. We're independent, local, and committed to your peace of mind.
