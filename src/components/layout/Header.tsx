@@ -2,14 +2,17 @@ import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { useScrollTo } from '../../hooks/useScrollTo';
 
+
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollToSection, scrollToTop } = useScrollTo();
+
 
   const handleNavClick = (sectionId: string) => {
     scrollToSection(sectionId);
     setMobileMenuOpen(false);
   };
+
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
@@ -20,8 +23,15 @@ export const Header = () => {
             className="flex items-center gap-1 hover:underline whitespace-nowrap"
           >
             <Phone className="w-3 h-3" />
-            (904) 534-9878
+            Call Us
           </a>
+          <span className="hidden sm:inline opacity-50">|</span>
+          <button
+            onClick={() => handleNavClick('contact')}
+            className="flex items-center gap-1 hover:underline whitespace-nowrap font-medium"
+          >
+            Get a Quote
+          </button>
           <span className="hidden sm:inline opacity-50">|</span>
           <a
             href="mailto:Claudia@nativeinsgroup.com"
@@ -30,16 +40,16 @@ export const Header = () => {
             <Mail className="w-3 h-3" />
             Email Us
           </a>
-          <span className="hidden sm:inline opacity-50">|</span>
-          <span className="whitespace-nowrap">Mon–Fri 9AM–5PM</span>
         </div>
       </div>
+
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center cursor-pointer" onClick={scrollToTop}>
             <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-16 w-auto" />
           </div>
+
 
           <div className="hidden md:flex space-x-1">
             <button onClick={() => handleNavClick('process')} className="text-native-gray hover:text-native-green hover:bg-native-mint-light px-4 py-2 rounded transition-all">Process</button>
@@ -48,6 +58,7 @@ export const Header = () => {
             <button onClick={() => handleNavClick('contact')} className="text-white bg-native-green hover:bg-native-green-secondary px-4 py-2 rounded transition-colors font-medium ml-2">Get Quote</button>
           </div>
 
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-native-gray"
@@ -55,6 +66,7 @@ export const Header = () => {
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+
 
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-3 border-t border-gray-100">

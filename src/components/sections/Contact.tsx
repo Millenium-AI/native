@@ -197,7 +197,7 @@ export const Contact = () => {
                     <a href="tel:+19045349878" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">
                       (904) 534-9878
                     </a>
-                    <p className="text-native-gray-secondary text-sm mt-1">Mon-Fri 9AM-5PM</p>
+                    <p className="text-native-gray-secondary text-sm mt-1">Call or Text</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -205,7 +205,7 @@ export const Contact = () => {
                   <div>
                     <p className="font-semibold text-native-gray mb-1">Email</p>
                     <a href="mailto:Claudia@nativeinsgroup.com" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">
-                      Claudia@nativeinsgroup.com
+                      claudia@nativeinsgroup.com
                     </a>
                     <p className="text-native-gray-secondary text-sm mt-1">We reply same day</p>
                   </div>
