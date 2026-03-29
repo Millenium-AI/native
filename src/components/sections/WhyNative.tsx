@@ -1,5 +1,6 @@
-import { Users, Award, Shield, Phone } from 'lucide-react';
+import { Users, Award, Shield, Phone, Quote } from 'lucide-react';
 import { useScrollTo } from '../../hooks/useScrollTo';
+import ownerPhoto from '../img/headshot.png';
 
 export const WhyNative = () => {
   const { scrollToSection } = useScrollTo();
@@ -7,59 +8,96 @@ export const WhyNative = () => {
   return (
     <section id="why-native" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-light text-native-green mb-4 text-center">Why Choose Native Insurance Group</h2>
-        <p className="text-base sm:text-lg text-native-gray mb-10 text-center max-w-2xl mx-auto">
-          We're different. We're focused on building long-term relationships, not just making sales.
+
+        {/* ── Section header ── */}
+        <h2 className="text-3xl sm:text-4xl font-light text-native-green mb-4 text-center">
+          Why Choose Native Insurance Group
+        </h2>
+        <p className="text-base sm:text-lg text-native-gray mb-12 text-center max-w-2xl mx-auto">
+          We're independent, local, and on your side — focused on long-term relationships, not one-time sales.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        {/* ── Top row: Founder (left 3/5) + Tiles (right 2/5) ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6 lg:h-80">
 
-          {/* Left: feature list */}
-          <div className="space-y-6 sm:space-y-8">
-            <div className="flex gap-4 sm:gap-6">
-              <Users className="w-7 h-7 sm:w-8 sm:h-8 text-native-green flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-native-gray mb-2">Personalized Service</h3>
-                <p className="text-native-gray-secondary text-sm sm:text-base">We listen, understand your situation, and provide recommendations tailored just for you—not generic quotes.</p>
-              </div>
+          {/* Founder card */}
+          <div className="lg:col-span-3 grid grid-cols-2 bg-native-mint-light rounded-2xl overflow-hidden">
+
+            {/* Photo — bg color matched to photo background to eliminate seam */}
+            <div className="relative h-full bg-[#e8ddd4]">
+              <img
+                src={ownerPhoto}
+                alt="Claudia Torres, Founder of Native Insurance Group"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
             </div>
-            <div className="flex gap-4 sm:gap-6">
-              <Award className="w-7 h-7 sm:w-8 sm:h-8 text-native-green flex-shrink-0 mt-1" />
+
+            {/* Quote */}
+            <div className="flex flex-col justify-center p-6">
+              <Quote className="w-7 h-7 text-native-green/15 mb-3 flex-shrink-0" />
+              <p className="text-sm text-native-gray italic leading-relaxed mb-3">
+                "I started Native Insurance Group because I wanted Floridians to have someone truly in their corner — not just an 800 number. I know this state, I know these risks, and I treat every client like a neighbor."
+              </p>
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-native-gray mb-2">Florida Expertise</h3>
-                <p className="text-native-gray-secondary text-sm sm:text-base">We specialize in Florida risks: hurricanes, flooding, wind damage, and coastal challenges. We know what you really need.</p>
-              </div>
-            </div>
-            <div className="flex gap-4 sm:gap-6">
-              <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-native-green flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-native-gray mb-2">Independent Agency</h3>
-                <p className="text-native-gray-secondary text-sm sm:text-base">We work for you, not for one insurance company. We shop multiple carriers to find you the best value.</p>
-              </div>
-            </div>
-            <div className="flex gap-4 sm:gap-6">
-              <Phone className="w-7 h-7 sm:w-8 sm:h-8 text-native-green flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-native-gray mb-2">Claims Advocacy</h3>
-                <p className="text-native-gray-secondary text-sm sm:text-base">When claims happen, we step in to advocate for you and ensure the process is smooth and fair.</p>
+                <p className="text-sm font-bold text-native-green">Claudia Torres</p>
+                <p className="text-xs text-native-gray-secondary mt-0.5">Founder & Independent Agent</p>
               </div>
             </div>
           </div>
 
-          {/* Right: stats + CTA */}
-          <div className="bg-native-mint-light rounded-2xl p-6 sm:p-8 flex flex-col justify-center">
-            <div className="mb-6 sm:mb-8">
-              <p className="text-4xl sm:text-5xl font-bold text-native-green mb-2">20+</p>
-              <p className="text-native-gray font-semibold">Years of Combined Experience</p>
-              <p className="text-native-gray-secondary text-sm mt-2">Our team brings decades of insurance expertise to the table</p>
+          {/* Feature tiles — 2×2 grid */}
+          <div className="lg:col-span-2 grid grid-cols-2 grid-rows-2 gap-3">
+            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-4 flex flex-col gap-2">
+              <Users className="w-5 h-5 text-native-green" />
+              <h3 className="text-xs font-semibold text-native-gray">Personalized Service</h3>
+              <p className="text-native-gray-secondary text-xs leading-snug">
+                Coverage tailored to you — not generic quotes.
+              </p>
             </div>
-            <div className="mb-6 sm:mb-8 pt-6 sm:pt-8 border-t border-native-mint">
-              <p className="text-3xl sm:text-4xl font-bold text-native-green mb-2">500+</p>
-              <p className="text-native-gray font-semibold">Satisfied Florida Clients</p>
-              <p className="text-native-gray-secondary text-sm mt-2">Families and businesses trust us to protect what matters</p>
+            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-4 flex flex-col gap-2">
+              <Award className="w-5 h-5 text-native-green" />
+              <h3 className="text-xs font-semibold text-native-gray">Florida Expertise</h3>
+              <p className="text-native-gray-secondary text-xs leading-snug">
+                Hurricanes, flooding, wind — we know Florida risks.
+              </p>
             </div>
-            <div className="pt-6 sm:pt-8 border-t border-native-mint">
-              <p className="text-base sm:text-lg font-semibold text-native-gray mb-3">Ready to join them?</p>
+            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-4 flex flex-col gap-2">
+              <Shield className="w-5 h-5 text-native-green" />
+              <h3 className="text-xs font-semibold text-native-gray">Independent Agency</h3>
+              <p className="text-native-gray-secondary text-xs leading-snug">
+                We shop multiple carriers for your best rate.
+              </p>
+            </div>
+            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-4 flex flex-col gap-2">
+              <Phone className="w-5 h-5 text-native-green" />
+              <h3 className="text-xs font-semibold text-native-gray">Claims Advocacy</h3>
+              <p className="text-native-gray-secondary text-xs leading-snug">
+                We fight for you when claims happen.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ── Bottom row: Stats + CTA ── */}
+        <div className="bg-native-mint-light rounded-2xl p-6 sm:p-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center">
+            <div className="text-center sm:text-left">
+              <p className="text-3xl font-bold text-native-green mb-1">20+</p>
+              <p className="text-sm font-semibold text-native-gray">Years of Experience</p>
+              <p className="text-xs text-native-gray-secondary mt-1">
+                Decades of Florida insurance expertise at your service
+              </p>
+            </div>
+            <div className="text-center sm:text-left sm:border-x border-native-mint sm:px-8">
+              <p className="text-3xl font-bold text-native-green mb-1">500+</p>
+              <p className="text-sm font-semibold text-native-gray">Trusted Florida Clients</p>
+              <p className="text-xs text-native-gray-secondary mt-1">
+                Families and businesses who trust us to protect what matters
+              </p>
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="text-sm font-semibold text-native-gray mb-3">Ready to join them?</p>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="w-full px-6 py-3 bg-native-green text-white rounded-lg font-semibold hover:bg-native-green-secondary transition-colors"
@@ -68,8 +106,8 @@ export const WhyNative = () => {
               </button>
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
   );
