@@ -4,26 +4,26 @@ const steps = [
   {
     number: "01",
     icon: Phone,
-    title: "Contact Us",
-    description: "Call, email, or fill out our quick quote form",
+    title: "Tell Us Your Needs",
+    description: "Call, email, or fill out our quick quote form — takes less than 2 minutes",
   },
   {
     number: "02",
     icon: Search,
-    title: "We Analyze",
-    description: "Our experts review your situation and needs",
+    title: "We Do the Homework",
+    description: "Our licensed agents review your situation and identify the right coverage",
   },
   {
     number: "03",
     icon: GitCompare,
-    title: "Compare Options",
-    description: "We shop multiple carriers for best value",
+    title: "See Your Best Options",
+    description: "We shop top-rated Florida carriers to find you the best value",
   },
   {
     number: "04",
     icon: ShieldCheck,
-    title: "Get Covered",
-    description: "Finalize policy and enjoy peace of mind",
+    title: "You're Protected",
+    description: "Sign your policy and get on with life — we're here when you need us",
   },
 ];
 
@@ -38,8 +38,8 @@ export const Process = () => {
             Our Simple Process
           </h2>
           <p className="text-base sm:text-lg text-native-gray max-w-2xl mx-auto">
-            Getting insured doesn't have to be complicated. We handle the
-            details so you don't have to.
+            Most clients are covered in under 24 hours. We handle every detail
+            so you don't have to lift a finger.
           </p>
         </div>
 
