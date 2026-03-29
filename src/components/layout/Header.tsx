@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { useScrollTo } from '../../hooks/useScrollTo';
 
 export const Header = () => {
@@ -13,8 +13,26 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <div className="bg-native-green-secondary text-white py-2 px-4 text-center text-sm">
-        <span>Call us: (123) 456-7890 | Hours: Mon-Fri 9AM-5PM</span>
+      <div className="bg-native-green-secondary text-white py-2 px-4 text-sm">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-x-4 gap-y-1">
+          <a
+            href="tel:+19045349878"
+            className="flex items-center gap-1 hover:underline whitespace-nowrap"
+          >
+            <Phone className="w-3 h-3" />
+            (904) 534-9878
+          </a>
+          <span className="hidden sm:inline opacity-50">|</span>
+          <a
+            href="mailto:Claudia@nativeinsgroup.com"
+            className="flex items-center gap-1 hover:underline whitespace-nowrap"
+          >
+            <Mail className="w-3 h-3" />
+            Email Us
+          </a>
+          <span className="hidden sm:inline opacity-50">|</span>
+          <span className="whitespace-nowrap">Mon–Fri 9AM–5PM</span>
+        </div>
       </div>
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

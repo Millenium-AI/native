@@ -160,8 +160,8 @@ export const Contact = () => {
                   <Phone className="w-6 h-6 text-native-green flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-native-gray mb-1">Phone</p>
-                    <a href="tel:+1234567890" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">
-                      (123) 456-7890
+                    <a href="tel:+9045349878" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">
+                      (904) 534-9878
                     </a>
                     <p className="text-native-gray-secondary text-sm mt-1">Mon-Fri 9AM-5PM</p>
                   </div>
@@ -171,8 +171,8 @@ export const Contact = () => {
                   <Mail className="w-6 h-6 text-native-green flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-native-gray mb-1">Email</p>
-                    <a href="mailto:info@nativeinsurancegroup.com" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">
-                      info@nativeinsurancegroup.com
+                    <a href="mailto:Claudia@nativeinsgroup.com" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">
+                      Claudia@nativeinsgroup.com
                     </a>
                     <p className="text-native-gray-secondary text-sm mt-1">We reply same day</p>
                   </div>

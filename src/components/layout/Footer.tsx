@@ -22,8 +22,8 @@ export const Footer = () => {
           <div>
             <p className="font-semibold text-white mb-3">Contact</p>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><a href="tel:+1234567890" className="hover:text-white transition-colors">(123) 456-7890</a></li>
-              <li><a href="mailto:info@nativeinsurancegroup.com" className="hover:text-white transition-colors">info@nativeinsurancegroup.com</a></li>
+              <li><a href="tel:+9045349878" className="hover:text-white transition-colors">(904) 534-9878</a></li>
+              <li><a href="mailto:Claudia@nativeinsgroup.com" className="hover:text-white transition-colors">Claudia@nativeinsgroup.com</a></li>
             </ul>
           </div>
           <div>
