@@ -45,7 +45,7 @@ export const Hero = () => {
 
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div className="bg-white h-32 flex items-center justify-center p-4">
-              <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-24 w-auto" />
+              <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-40 w-auto" />
             </div>
             <div className="p-8 space-y-6">
               <div className="flex items-start gap-4">
