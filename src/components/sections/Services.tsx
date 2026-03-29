@@ -5,37 +5,37 @@ export const Services = () => {
     {
       icon: Car,
       title: 'Auto Insurance',
-      desc: 'Liability, collision & comprehensive coverage for every driver in Florida'
+      desc: 'Liability, collision & comprehensive coverage for every driver in Florida.'
     },
     {
       icon: Home,
       title: 'Home, Condo & Renters',
-      desc: 'Protect your property and belongings whether you own or rent'
+      desc: 'Protect your property and belongings whether you own or rent.'
     },
     {
       icon: Waves,
       title: 'Flood Insurance',
-      desc: 'Essential Florida coverage — standard policies don\'t cover flood damage'
+      desc: 'Essential Florida coverage — standard policies don\'t cover flood damage.'
     },
     {
       icon: Building2,
       title: 'Business & Commercial',
-      desc: 'General liability, property & BOP coverage tailored for Florida businesses'
+      desc: 'General liability, property & BOP coverage tailored for Florida businesses.'
     },
     {
       icon: Bike,
       title: 'Recreational Vehicles',
-      desc: 'Coverage for ATVs, golf carts, motorcycles & all recreational vehicles'
+      desc: 'Coverage for ATVs, golf carts, motorcycles & all recreational vehicles.'
     },
     {
       icon: Anchor,
       title: 'Boats & Yachts',
-      desc: 'Hull, liability & on-water protection from The Keys to The Panhandle'
+      desc: 'Hull, liability & on-water protection for Florida boaters of all kinds.'
     },
     {
       icon: Package,
       title: 'Personal Articles',
-      desc: 'Scheduled coverage for jewelry, art, electronics & high-value belongings'
+      desc: 'Scheduled coverage for jewelry, art, electronics & high-value belongings.'
     },
   ];
 

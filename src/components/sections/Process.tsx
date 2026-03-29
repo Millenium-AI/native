@@ -5,25 +5,25 @@ const steps = [
     number: "01",
     icon: Phone,
     title: "Tell Us Your Needs",
-    description: "Call, email, or fill out our quick quote form — takes less than 2 minutes",
+    description: "Call, email, or fill out our quick quote form — takes less than 2 minutes!",
   },
   {
     number: "02",
     icon: Search,
     title: "We Do the Homework",
-    description: "Our licensed agents review your situation and identify the right coverage",
+    description: "Our licensed agents review your situation and identify the right coverage.",
   },
   {
     number: "03",
     icon: GitCompare,
     title: "See Your Best Options",
-    description: "We shop top-rated Florida carriers to find you the best value",
+    description: "We shop top-rated Florida carriers to find you the best value.",
   },
   {
     number: "04",
     icon: ShieldCheck,
     title: "You're Protected",
-    description: "Sign your policy and get on with life — we're here when you need us",
+    description: "Sign your policy and relax — we're here when you need us.",
   },
 ];
 
