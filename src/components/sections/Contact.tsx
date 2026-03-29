@@ -1,6 +1,18 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Phone, Mail, Clock, CheckCircle } from 'lucide-react';
 import type { FormData } from '../../types';
+
+// ---------------------------------------------------------------------------
+// EmailJS config  –  fill these in once you have your EmailJS account
+// Store them in a .env file at the project root (never commit real keys):
+//   VITE_EMAILJS_SERVICE_ID=your_service_id
+//   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+//   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+// ---------------------------------------------------------------------------
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  ?? 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  ?? 'YOUR_PUBLIC_KEY';
 
 export const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -12,11 +24,37 @@ export const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you! We will contact you within one business day.');
-    setFormData({ name: '', email: '', phone: '', contactMethod: 'email', insuranceType: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:      formData.name,
+          from_email:     formData.email,
+          phone:          formData.phone,
+          contact_method: formData.contactMethod,
+          insurance_type: formData.insuranceType,
+          message:        formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '', contactMethod: 'email', insuranceType: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -33,7 +71,6 @@ export const Contact = () => {
         <p className="text-lg text-native-gray mb-12 text-center max-w-2xl mx-auto">
           Ready to get protected? We're standing by to help you find the right coverage.
         </p>
-
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 bg-white rounded-xl shadow-md p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -52,7 +89,6 @@ export const Contact = () => {
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-native-green focus:ring-2 focus:ring-native-green-secondary outline-none transition-colors"
                   />
                 </div>
-
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-native-gray mb-2">
                     Email *
@@ -68,7 +104,6 @@ export const Contact = () => {
                   />
                 </div>
               </div>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-native-gray mb-2">
@@ -84,7 +119,6 @@ export const Contact = () => {
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-native-green focus:ring-2 focus:ring-native-green-secondary outline-none transition-colors"
                   />
                 </div>
-
                 <div>
                   <label htmlFor="contactMethod" className="block text-sm font-semibold text-native-gray mb-2">
                     Preferred Contact
@@ -102,7 +136,6 @@ export const Contact = () => {
                   </select>
                 </div>
               </div>
-
               <div>
                 <label htmlFor="insuranceType" className="block text-sm font-semibold text-native-gray mb-2">
                   Type of Insurance *
@@ -126,7 +159,6 @@ export const Contact = () => {
                   <option value="other">Other Coverage</option>
                 </select>
               </div>
-
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-native-gray mb-2">
                   Tell us about your needs
@@ -142,31 +174,44 @@ export const Contact = () => {
                 />
               </div>
 
+              {/* Success message */}
+              {submitStatus === 'success' && (
+                <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                  <p className="text-sm font-medium">Thank you! We'll be in touch within one business day.</p>
+                </div>
+              )}
+
+              {/* Error message */}
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+                  <p className="text-sm font-medium">Something went wrong. Please call us directly at (904) 534-9878.</p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-native-green text-white rounded-lg font-semibold hover:bg-native-green-secondary transition-colors shadow-lg hover:shadow-xl"
+                disabled={isSubmitting}
+                className="w-full px-8 py-4 bg-native-green text-white rounded-lg font-semibold hover:bg-native-green-secondary transition-colors shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Quote Request
+                {isSubmitting ? 'Sending...' : 'Send Quote Request'}
               </button>
             </form>
           </div>
-
           <div className="space-y-6">
             <div className="bg-white rounded-xl shadow-md p-8">
               <h3 className="text-2xl font-semibold text-native-green mb-6">Contact Us Directly</h3>
-
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <Phone className="w-6 h-6 text-native-green flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-native-gray mb-1">Phone</p>
-                    <a href="tel:+9045349878" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">
+                    <a href="tel:+19045349878" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">
                       (904) 534-9878
                     </a>
                     <p className="text-native-gray-secondary text-sm mt-1">Mon-Fri 9AM-5PM</p>
                   </div>
                 </div>
-
                 <div className="flex gap-4">
                   <Mail className="w-6 h-6 text-native-green flex-shrink-0 mt-1" />
                   <div>
@@ -177,7 +222,6 @@ export const Contact = () => {
                     <p className="text-native-gray-secondary text-sm mt-1">We reply same day</p>
                   </div>
                 </div>
-
                 <div className="flex gap-4">
                   <Clock className="w-6 h-6 text-native-green flex-shrink-0 mt-1" />
                   <div>
@@ -191,30 +235,14 @@ export const Contact = () => {
                 </div>
               </div>
             </div>
-
             <div className="bg-native-green text-white rounded-xl p-8">
               <h4 className="font-semibold mb-3">Why We're Different</h4>
               <ul className="space-y-2 text-sm">
-                <li className="flex gap-2">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  <span>20+ years experience</span>
-                </li>
-                <li className="flex gap-2">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  <span>Florida specialists</span>
-                </li>
-                <li className="flex gap-2">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  <span>Multiple carriers</span>
-                </li>
-                <li className="flex gap-2">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  <span>Personal service</span>
-                </li>
-                <li className="flex gap-2">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  <span>Claims advocacy</span>
-                </li>
+                <li className="flex gap-2"><CheckCircle className="w-5 h-5 flex-shrink-0" /><span>20+ years experience</span></li>
+                <li className="flex gap-2"><CheckCircle className="w-5 h-5 flex-shrink-0" /><span>Florida specialists</span></li>
+                <li className="flex gap-2"><CheckCircle className="w-5 h-5 flex-shrink-0" /><span>Multiple carriers</span></li>
+                <li className="flex gap-2"><CheckCircle className="w-5 h-5 flex-shrink-0" /><span>Personal service</span></li>
+                <li className="flex gap-2"><CheckCircle className="w-5 h-5 flex-shrink-0" /><span>Claims advocacy</span></li>
               </ul>
             </div>
           </div>
