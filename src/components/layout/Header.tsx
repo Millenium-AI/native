@@ -34,7 +34,7 @@ export const Header = () => {
           </button>
           <span className="hidden sm:inline opacity-50">|</span>
           <a
-            href="mailto:Claudia@nativeinsgroup.com"
+            href="mailto:info@nativeinsgroup.com"
             className="flex items-center gap-1 hover:underline whitespace-nowrap"
           >
             <Mail className="w-3 h-3" />
