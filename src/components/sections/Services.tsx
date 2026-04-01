@@ -1,4 +1,5 @@
-import { Car, Home, Waves, Building2, Package, Bike, Anchor } from 'lucide-react';
+import { Car, Home, Waves, Building2, Gem, Anchor } from 'lucide-react';
+import { GolfCartIcon } from '../icons/GolfCartIcon';
 
 export const Services = () => {
   const services = [
@@ -23,7 +24,7 @@ export const Services = () => {
       desc: 'General liability, property & BOP coverage tailored for Florida businesses.'
     },
     {
-      icon: Bike,
+      icon: GolfCartIcon,
       title: 'Recreational Vehicles',
       desc: 'Coverage for ATVs, golf carts, motorcycles & all recreational vehicles.'
     },
@@ -33,7 +34,7 @@ export const Services = () => {
       desc: 'Hull, liability & on-water protection for Florida boaters of all kinds.'
     },
     {
-      icon: Package,
+      icon: Gem,
       title: 'Personal Articles',
       desc: 'Scheduled coverage for jewelry, art, electronics & high-value belongings.'
     },
