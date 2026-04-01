@@ -1,13 +1,16 @@
-import { Users, Award, Shield, Phone, Quote } from 'lucide-react';
+import { Users, Award, Shield, Phone, Quote, Linkedin } from 'lucide-react';
 import { useScrollTo } from '../../hooks/useScrollTo';
 import ownerPhoto from '../img/headshot.png';
+
 
 export const WhyNative = () => {
   const { scrollToSection } = useScrollTo();
 
+
   return (
     <section id="why-native" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
 
         {/* ── Section header ── */}
         <h2 className="text-3xl sm:text-4xl font-light text-native-green mb-4 text-center">
@@ -17,11 +20,14 @@ export const WhyNative = () => {
           We're independent, local, and on your side — focused on long-term relationships, not one-time sales.
         </p>
 
+
         {/* ── Top row: Founder (left 3/5) + Tiles (right 2/5) ── */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6 lg:h-96">
 
+
           {/* Founder card */}
           <div className="lg:col-span-3 grid grid-cols-2 bg-native-mint-light rounded-2xl overflow-hidden">
+
 
             {/* Photo — object-[center_5%] pulls head down into frame */}
             <div className="relative h-full bg-[#e8ddd4]">
@@ -32,6 +38,7 @@ export const WhyNative = () => {
               />
             </div>
 
+
             {/* Quote */}
             <div className="flex flex-col justify-center p-7">
               <Quote className="w-8 h-8 text-native-green/15 mb-4 flex-shrink-0" />
@@ -39,11 +46,23 @@ export const WhyNative = () => {
                 "At Native, we treat every client like family. I'll shop the market to see if we can do better for you — and if your current coverage is already the best deal, I'll tell you to stay put. I'm here to make sure you're protected."
               </p>
               <div>
-                <p className="text-sm font-bold text-native-green">Claudia Torres</p>
+                <div className="flex items-center gap-2">
+                  <p className="text-sm font-bold text-native-green">Claudia Torres</p>
+                  <a
+                    href="https://www.linkedin.com/in/claudia-torres-28a74048"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Claudia Torres on LinkedIn"
+                    className="text-native-green/60 hover:text-native-green transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                </div>
                 <p className="text-xs text-native-gray-secondary mt-0.5">Founder & Independent Agent</p>
               </div>
             </div>
           </div>
+
 
           {/* Feature tiles — 2×2 grid */}
           <div className="lg:col-span-2 grid grid-cols-2 grid-rows-2 gap-3">
@@ -72,12 +91,14 @@ export const WhyNative = () => {
               <Phone className="w-6 h-6 text-native-green" />
               <h3 className="text-md font-semibold text-native-gray">Claims Advocacy</h3>
               <p className="text-native-gray-secondary text-sm leading-snug">
-                We fight for you when claims happen.
+                We will guide you on how to process your claim.
               </p>
             </div>
           </div>
 
+
         </div>
+
 
         {/* ── Bottom row: Stats + CTA ── */}
         <div className="bg-native-mint-light rounded-2xl p-6 sm:p-8">
@@ -107,6 +128,7 @@ export const WhyNative = () => {
             </div>
           </div>
         </div>
+
 
       </div>
     </section>

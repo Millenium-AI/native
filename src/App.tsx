@@ -5,19 +5,24 @@ import { Process } from './components/sections/Process';
 import { Services } from './components/sections/Services';
 import { WhyNative } from './components/sections/WhyNative';
 import { Contact } from './components/sections/Contact';
+import { QuoteProvider } from './context/QuoteContext';
+
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <Hero />
-      <Process />
-      <Services />
-      <WhyNative />
-      <Contact />
-      <Footer />
-    </div>
+    <QuoteProvider>
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Hero />
+        <Process />
+        <Services />
+        <WhyNative />
+        <Contact />
+        <Footer />
+      </div>
+    </QuoteProvider>
   );
 }
+
 
 export default App;
