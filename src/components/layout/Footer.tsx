@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useScrollTo } from '../../hooks/useScrollTo';
 
 export const Footer = () => {
@@ -22,23 +23,31 @@ export const Footer = () => {
           <div>
             <p className="font-semibold text-white mb-3">Contact</p>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><a href="tel:+9045349878" className="hover:text-white transition-colors">(904) 534-9878</a></li>
+              <li><a href="tel:+19045349878" className="hover:text-white transition-colors">(904) 534-9878</a></li>
               <li><a href="mailto:info@nativeinsgroup.com" className="hover:text-white transition-colors">info@nativeinsgroup.com</a></li>
             </ul>
           </div>
           <div>
             <p className="font-semibold text-white mb-3">Hours</p>
-            <p className="text-gray-300 text-sm">Monday - Friday<br />9:00 AM - 5:00 PM EST</p>
+            <p className="text-gray-300 text-sm">Monday – Friday<br />9:00 AM – 5:00 PM EST</p>
+            <p className="text-gray-300 text-sm mt-1">Saturday by Appointment</p>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-300 text-sm">
             © {new Date().getFullYear()} Native Insurance Group. All rights reserved.
           </p>
-          <p className="text-gray-300 text-sm mt-4 md:mt-0">
-            Licensed Independent Insurance Agency
-          </p>
+          <div className="flex items-center gap-4 text-sm">
+            <Link
+              to="/privacy-policy"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-gray-600">|</span>
+            <p className="text-gray-300">Licensed Independent Insurance Agency</p>
+          </div>
         </div>
       </div>
     </footer>
