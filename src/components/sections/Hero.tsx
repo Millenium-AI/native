@@ -79,7 +79,7 @@ export const Hero = () => {
                 <CheckCircle className="w-6 h-6 text-native-green mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-native-gray">Claims Advocacy</p>
-                  <p className="text-native-gray-secondary text-sm">We fight for you when it matters most</p>
+                  <p className="text-native-gray-secondary text-sm">We will guide you on how to process your claim</p>
                 </div>
               </div>
             </div>
