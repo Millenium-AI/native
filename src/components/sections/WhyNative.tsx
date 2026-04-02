@@ -22,7 +22,7 @@ export const WhyNative = () => {
 
 
         {/* ── Top row: Founder (left 3/5) + Tiles (right 2/5) ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6 lg:h-96">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6">
 
 
           {/* Founder card */}
@@ -66,31 +66,31 @@ export const WhyNative = () => {
 
           {/* Feature tiles — 2×2 grid */}
           <div className="lg:col-span-2 grid grid-cols-2 grid-rows-2 gap-3">
-            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-5 flex flex-col gap-2">
-              <Users className="w-6 h-6 text-native-green" />
-              <h3 className="text-md font-semibold text-native-gray">Personalized Service</h3>
-              <p className="text-native-gray-secondary text-sm leading-snug">
+            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-4 sm:p-5 flex flex-col gap-2">
+              <Users className="w-5 h-5 sm:w-6 sm:h-6 text-native-green" />
+              <h3 className="text-sm sm:text-md font-semibold text-native-gray">Personalized Service</h3>
+              <p className="text-native-gray-secondary text-xs sm:text-sm leading-snug">
                 Coverage tailored to you — not generic quotes.
               </p>
             </div>
-            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-5 flex flex-col gap-2">
-              <Award className="w-6 h-6 text-native-green" />
-              <h3 className="text-md font-semibold text-native-gray">Florida Expertise</h3>
-              <p className="text-native-gray-secondary text-sm leading-snug">
+            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-4 sm:p-5 flex flex-col gap-2">
+              <Award className="w-5 h-5 sm:w-6 sm:h-6 text-native-green" />
+              <h3 className="text-sm sm:text-md font-semibold text-native-gray">Florida Expertise</h3>
+              <p className="text-native-gray-secondary text-xs sm:text-sm leading-snug">
                 Hurricanes, flooding, wind damage — we know Florida risks.
               </p>
             </div>
-            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-5 flex flex-col gap-2">
-              <Shield className="w-6 h-6 text-native-green" />
-              <h3 className="text-md font-semibold text-native-gray">Independent Agency</h3>
-              <p className="text-native-gray-secondary text-sm leading-snug">
+            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-4 sm:p-5 flex flex-col gap-2">
+              <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-native-green" />
+              <h3 className="text-sm sm:text-md font-semibold text-native-gray">Independent Agency</h3>
+              <p className="text-native-gray-secondary text-xs sm:text-sm leading-snug">
                 We shop multiple carriers to find you the best rate.
               </p>
             </div>
-            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-5 flex flex-col gap-2">
-              <Phone className="w-6 h-6 text-native-green" />
-              <h3 className="text-md font-semibold text-native-gray">Claims Advocacy</h3>
-              <p className="text-native-gray-secondary text-sm leading-snug">
+            <div className="bg-native-mint-light/50 border border-native-mint rounded-xl p-4 sm:p-5 flex flex-col gap-2">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-native-green" />
+              <h3 className="text-sm sm:text-md font-semibold text-native-gray">Claims Advocacy</h3>
+              <p className="text-native-gray-secondary text-xs sm:text-sm leading-snug">
                 We will guide you on how to process your claim.
               </p>
             </div>

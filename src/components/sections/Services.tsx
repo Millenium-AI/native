@@ -54,9 +54,9 @@ export const Services = () => {
   const CardContent = ({ service }: { service: typeof services[0] }) => (
     <div
       onClick={() => handleCardClick(service.title)}
-      className="bg-white p-6 sm:p-8 rounded-xl shadow-sm hover:shadow-md transition-all hover:translate-y-[-4px] cursor-pointer group"
+      className="bg-white p-5 sm:p-8 rounded-xl shadow-sm hover:shadow-md transition-all hover:translate-y-[-4px] cursor-pointer group"
     >
-      <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-native-green mb-4" />
+      <service.icon className="w-9 h-9 sm:w-12 sm:h-12 text-native-green mb-3 sm:mb-4" />
       <h3 className="text-base sm:text-lg font-semibold text-native-gray mb-2">{service.title}</h3>
       <p className="text-native-gray-secondary text-sm">{service.desc}</p>
       <p className="text-xs text-native-green font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -76,14 +76,14 @@ export const Services = () => {
         </p>
 
         {/* Row 1 — 4 cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-4 sm:mb-5">
           {services.slice(0, 4).map((service, idx) => (
             <CardContent key={idx} service={service} />
           ))}
         </div>
 
         {/* Row 2 — 3 cards centered */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:w-3/4 lg:mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 lg:w-3/4 lg:mx-auto">
           {services.slice(4).map((service, idx) => (
             <CardContent key={idx} service={service} />
           ))}

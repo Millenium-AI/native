@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="bg-native-gray py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
           <div>
             <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-12 w-auto mb-4" />
             <p className="text-gray-300 text-sm">Protecting Florida families and businesses since 2004.</p>

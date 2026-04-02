@@ -44,7 +44,7 @@ export const Process = () => {
         </div>
 
         {/* Steps */}
-        <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="relative grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
 
           {/* Connecting line — desktop only */}
           <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-native-green/30 to-transparent z-0" />
@@ -55,24 +55,24 @@ export const Process = () => {
               className="relative z-10 flex flex-col items-center text-center group"
             >
               {/* Icon circle */}
-              <div className="relative mb-5">
+              <div className="relative mb-4 md:mb-5">
                 {/* Outer ring */}
-                <div className="w-20 h-20 rounded-full border-2 border-native-green/20 flex items-center justify-center transition-all duration-300 group-hover:border-native-green/60 group-hover:scale-105">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-native-green/20 flex items-center justify-center transition-all duration-300 group-hover:border-native-green/60 group-hover:scale-105">
                   {/* Inner filled circle */}
-                  <div className="w-14 h-14 bg-native-green rounded-full flex items-center justify-center shadow-md shadow-native-green/30">
-                    <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-native-green rounded-full flex items-center justify-center shadow-md shadow-native-green/30">
+                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" strokeWidth={1.75} />
                   </div>
                 </div>
                 {/* Step number badge */}
-                <span className="absolute -top-1 -right-1 w-6 h-6 bg-white border border-native-green/30 text-native-green text-[10px] font-bold rounded-full flex items-center justify-center shadow-sm">
+                <span className="absolute -top-1 -right-1 w-5 h-5 md:w-6 md:h-6 bg-white border border-native-green/30 text-native-green text-[9px] md:text-[10px] font-bold rounded-full flex items-center justify-center shadow-sm">
                   {number}
                 </span>
               </div>
 
-              <h3 className="text-sm sm:text-base font-semibold text-native-gray mb-1.5">
+              <h3 className="text-xs sm:text-sm md:text-base font-semibold text-native-gray mb-1.5">
                 {title}
               </h3>
-              <p className="text-native-gray-secondary text-xs sm:text-sm leading-relaxed">
+              <p className="text-native-gray-secondary text-[11px] sm:text-xs md:text-sm leading-relaxed">
                 {description}
               </p>
             </div>

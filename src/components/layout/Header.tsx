@@ -16,8 +16,8 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <div className="bg-native-green-secondary text-white py-2 px-4 text-sm">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-x-4 gap-y-1">
+      <div className="bg-native-green-secondary text-white py-2 px-4 text-xs sm:text-sm">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-x-2 sm:gap-x-4 gap-y-1">
           <a
             href="tel:+19045349878"
             className="flex items-center gap-1 hover:underline whitespace-nowrap"
@@ -47,7 +47,7 @@ export const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center cursor-pointer" onClick={scrollToTop}>
-            <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-16 w-auto" />
+            <img src="/001_NATIVE_INSURANCE_GROUP_Blossom.png" alt="Native Insurance Group" className="h-12 sm:h-16 w-auto" />
           </div>
 
 
@@ -69,11 +69,11 @@ export const Header = () => {
 
 
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-3 border-t border-gray-100">
-            <button onClick={() => handleNavClick('process')} className="block w-full text-left text-native-gray hover:text-native-green py-2 px-4 hover:bg-native-mint-light rounded transition-all">Process</button>
-            <button onClick={() => handleNavClick('services')} className="block w-full text-left text-native-gray hover:text-native-green py-2 px-4 hover:bg-native-mint-light rounded transition-all">Services</button>
-            <button onClick={() => handleNavClick('why-native')} className="block w-full text-left text-native-gray hover:text-native-green py-2 px-4 hover:bg-native-mint-light rounded transition-all">Why Us</button>
-            <button onClick={() => handleNavClick('contact')} className="block w-full text-center text-white bg-native-green hover:bg-native-green-secondary py-2 px-4 rounded font-medium transition-colors">Get Quote</button>
+          <div className="md:hidden py-4 space-y-2 border-t border-gray-100">
+            <button onClick={() => handleNavClick('process')} className="block w-full text-left text-native-gray hover:text-native-green py-3 px-4 hover:bg-native-mint-light rounded transition-all">Process</button>
+            <button onClick={() => handleNavClick('services')} className="block w-full text-left text-native-gray hover:text-native-green py-3 px-4 hover:bg-native-mint-light rounded transition-all">Services</button>
+            <button onClick={() => handleNavClick('why-native')} className="block w-full text-left text-native-gray hover:text-native-green py-3 px-4 hover:bg-native-mint-light rounded transition-all">Why Us</button>
+            <button onClick={() => handleNavClick('contact')} className="block w-full text-center text-white bg-native-green hover:bg-native-green-secondary py-3 px-4 rounded font-medium transition-colors">Get Quote</button>
           </div>
         )}
       </nav>

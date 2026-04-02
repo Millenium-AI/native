@@ -69,9 +69,9 @@ export const Contact = () => {
           Ready to get protected? We're standing by to help you find the right coverage.
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 bg-white rounded-xl shadow-md p-8">
+          <div className="lg:col-span-2 bg-white rounded-xl shadow-md p-6 sm:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-native-gray mb-2">Full Name *</label>
                   <input
@@ -89,7 +89,7 @@ export const Contact = () => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-native-gray mb-2">Phone *</label>
                   <input
@@ -158,27 +158,27 @@ export const Contact = () => {
             </form>
           </div>
           <div className="space-y-6">
-            <div className="bg-white rounded-xl shadow-md p-8">
+            <div className="bg-white rounded-xl shadow-md p-6 sm:p-8">
               <h3 className="text-2xl font-semibold text-native-green mb-6">Contact Us Directly</h3>
               <div className="space-y-6">
-                <div className="flex gap-4">
-                  <Phone className="w-6 h-6 text-native-green flex-shrink-0 mt-1" />
+                <div className="flex gap-3 sm:gap-4">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-native-green flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-native-gray mb-1">Phone</p>
                     <a href="tel:+19045349878" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">(904) 534-9878</a>
                     <p className="text-native-gray-secondary text-sm mt-1">Call or Text</p>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <Mail className="w-6 h-6 text-native-green flex-shrink-0 mt-1" />
+                <div className="flex gap-3 sm:gap-4">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-native-green flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-native-gray mb-1">Email</p>
                     <a href="mailto:info@nativeinsgroup.com" className="text-native-green hover:text-native-green-secondary font-semibold transition-colors">info@nativeinsgroup.com</a>
                     <p className="text-native-gray-secondary text-sm mt-1">We Reply Same Day</p>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <Clock className="w-6 h-6 text-native-green flex-shrink-0 mt-1" />
+                <div className="flex gap-3 sm:gap-4">
+                  <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-native-green flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-native-gray mb-2">Hours</p>
                     <div className="text-native-gray-secondary text-sm space-y-1">
