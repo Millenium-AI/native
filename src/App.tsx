@@ -16,11 +16,13 @@ function App() {
         <Route path="/" element={
           <div className="min-h-screen bg-white">
             <Header />
-            <Hero />
-            <Process />
-            <Services />
-            <WhyNative />
-            <Contact />
+            <main className="pt-[88px]">
+              <Hero />
+              <Process />
+              <Services />
+              <WhyNative />
+              <Contact />
+            </main>
             <Footer />
           </div>
         } />
